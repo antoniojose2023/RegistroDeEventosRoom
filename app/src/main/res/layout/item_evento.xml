@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:id="@+id/cardItemEvento"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Título do Registro"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDescricao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Aqui vai a descrição detalhada do que foi registrado no aplicativo."
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="20/04/2026"
+            android:textAlignment="viewEnd"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+
+          <ImageButton
+              android:id="@+id/imageButtonDelete"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:src="@drawable/ic_delete"
+              android:layout_marginStart="16dp"
+              />
+
+          <ImageButton
+              android:id="@+id/imageButtonUpdate"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:src="@drawable/ic_edit"
+              android:layout_marginStart="8dp"
+              />
+
+      </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
