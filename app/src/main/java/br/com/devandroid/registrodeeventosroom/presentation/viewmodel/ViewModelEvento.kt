@@ -17,28 +17,15 @@ class ViewModelEvento @Inject constructor (private val repositoryEvento: IReposi
     private val _eventos = MutableLiveData<List<Evento>>()
     val eventos: LiveData<List<Evento>> = _eventos
 
-    fun salvarEvento(evento: Evento): Long {
-        viewModelScope.launch(Dispatchers.IO) {
-            repositoryEvento.salvar(evento)
-        }
-    }
+    suspend fun salvarEvento(evento: Evento) = repositoryEvento.salvar(evento)
 
-    fun deletarEvento(evento: Evento): Int{
-        viewModelScope.launch(Dispatchers.IO) {
-              repositoryEvento.delete(evento)
-        }
-    }
+    suspend fun deletarEvento(evento: Evento) = repositoryEvento.delete(evento)
 
-    fun atualizarEvento(evento: Evento): Int{
-          viewModelScope.launch(Dispatchers.IO) {
-              repositoryEvento.update( evento )
-          }
-    }
-
+    suspend fun atualizarEvento(evento: Evento) = repositoryEvento.update(evento)
 
     fun listarEvento(){
         viewModelScope.launch(Dispatchers.IO) {
-             _eventos.value = repositoryEvento.listarEventos()
+             _eventos.postValue( repositoryEvento.listarEventos())
         }
     }
 

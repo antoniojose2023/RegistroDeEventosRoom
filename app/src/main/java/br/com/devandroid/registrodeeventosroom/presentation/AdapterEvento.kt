@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.devandroid.registrodeeventosroom.data.model.Evento
 import br.com.devandroid.registrodeeventosroom.databinding.ItemEventoBinding
 
-class AdapterEvento(val onclickDelete: (Evento) -> Unit, val onclickEdit: (Evento) -> Unit): RecyclerView.Adapter<AdapterEvento.EventoViewHolder>() {
+class AdapterEvento(var onclickDelete: (Evento) -> Unit = {}, var onclickEdit: (Evento) -> Unit = {}): RecyclerView.Adapter<AdapterEvento.EventoViewHolder>() {
 
     private var eventos = mutableListOf<Evento>()
 

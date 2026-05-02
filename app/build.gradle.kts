@@ -51,6 +51,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.junit.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -75,5 +76,17 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
     //ktx
     implementation("androidx.fragment:fragment-ktx:1.8.9")
+
+    // Test helpers
+    testImplementation("androidx.room:room-testing:${room_version}")
+
+    // Truth
+    testImplementation("com.google.truth:truth:1.4.2")
+
+    //mockito
+    testImplementation("org.mockito:mockito-core:5.22.0")
+
+    //roboeletric
+    testImplementation("org.robolectric:robolectric:4.16")
 
 }
